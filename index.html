@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+//            元素选择器
+         var a = $("input");
+//            alert($(a[2]).val())
+
+            $(".btn").click(function () {
+                alert("我被点击了")
+            })
+            $(".btn1").dblclick(function () {
+                alert("我被双击了")
+            })
+
+            $(".mouseover").mouseover(function () {
+//                alert("鼠标移入了")
+            })
+
+            $(".btn").mousedown(function () {
+                alert("haah")
+            })
+            $(".mouseenter").mouseenter(function () {
+               $(this).css("background-color","blue")
+            })
+//            one事件
+            $(".one").one("click",function () {
+                alert("one事件")
+            })
+//            获得焦点事件
+           $(".username").focus(function () {
+               $(this).css("background-color","blue")
+           })
+            $(".password").blur(function () {
+                var length = $(this).val().length;
+                alert(length);
+                if(length<6){
+                    alert("你的密码长度少于六位")
+                }
+            })
+
+        })
+    </script>
+</head>
+<body>
+<div id="main" class="div">
+    <input type="text" value="1">
+    <input type="text" value="2">
+    <input type="text" value="3">
+
+    <input type="button" class="one" value="one事件">
+    <input type="button" class="btn" value="点击事件">
+    <input type="button" class="btn1" value="双击事件">
+
+
+    <div class="mouseover " style="width: 120px;height: 120px;background-color: aquamarine">
+
+    </div>
+
+    <div class="mouseenter " style="width: 120px;height: 120px;background-color: red">
+      1
+    </div>
+
+
+   用户名 ：<input type="text" class="username">
+    密码：<input type="text" class="password">
+</div>
+</body>
+</html>
